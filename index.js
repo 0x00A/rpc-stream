@@ -68,8 +68,10 @@ module.exports = function (obj, opts) {
       //log this error, but don't throw.
       //this process shouldn't crash because another did wrong
 
-      s.emit('invalid callback id')
-      return console.error('ERROR: unknown callback id: '+i, data)
+      // note
+      // this is totally not working properly.
+      //s.emit('invalid callback id')
+      return; //console.error('ERROR: unknown callback id: '+i, data)
     } else {
       //call the callback.
       var cb = cbs[i]
